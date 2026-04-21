@@ -1,0 +1,14 @@
+/home/arafat01rahman/ChatApp/ChatApp.Console/bin/Debug/net8.0/ChatApp.Console
+/home/arafat01rahman/ChatApp/ChatApp.Console/bin/Debug/net8.0/ChatApp.Console.deps.json
+/home/arafat01rahman/ChatApp/ChatApp.Console/bin/Debug/net8.0/ChatApp.Console.runtimeconfig.json
+/home/arafat01rahman/ChatApp/ChatApp.Console/bin/Debug/net8.0/ChatApp.Console.dll
+/home/arafat01rahman/ChatApp/ChatApp.Console/bin/Debug/net8.0/ChatApp.Console.pdb
+/home/arafat01rahman/ChatApp/ChatApp.Console/obj/Debug/net8.0/ChatApp.Console.GeneratedMSBuildEditorConfig.editorconfig
+/home/arafat01rahman/ChatApp/ChatApp.Console/obj/Debug/net8.0/ChatApp.Console.AssemblyInfoInputs.cache
+/home/arafat01rahman/ChatApp/ChatApp.Console/obj/Debug/net8.0/ChatApp.Console.AssemblyInfo.cs
+/home/arafat01rahman/ChatApp/ChatApp.Console/obj/Debug/net8.0/ChatApp.Console.csproj.CoreCompileInputs.cache
+/home/arafat01rahman/ChatApp/ChatApp.Console/obj/Debug/net8.0/ChatApp.Console.dll
+/home/arafat01rahman/ChatApp/ChatApp.Console/obj/Debug/net8.0/refint/ChatApp.Console.dll
+/home/arafat01rahman/ChatApp/ChatApp.Console/obj/Debug/net8.0/ChatApp.Console.pdb
+/home/arafat01rahman/ChatApp/ChatApp.Console/obj/Debug/net8.0/ChatApp.Console.genruntimeconfig.cache
+/home/arafat01rahman/ChatApp/ChatApp.Console/obj/Debug/net8.0/ref/ChatApp.Console.dll
