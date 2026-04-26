@@ -12,3 +12,4 @@
 /home/arafat01rahman/ChatApp/ChatApp.Console/obj/Debug/net8.0/ChatApp.Console.pdb
 /home/arafat01rahman/ChatApp/ChatApp.Console/obj/Debug/net8.0/ChatApp.Console.genruntimeconfig.cache
 /home/arafat01rahman/ChatApp/ChatApp.Console/obj/Debug/net8.0/ref/ChatApp.Console.dll
+/home/arafat01rahman/ChatApp/ChatApp.Console/obj/Debug/net8.0/ChatApp.Console.sourcelink.json
