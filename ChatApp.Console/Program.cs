@@ -1,5 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using ChatApp.Console.Models;
+using System.Text;
 using System.Text.Json;
 
 class Program
@@ -17,10 +18,10 @@ class Program
         Server server = new Server("MainServer");
         server.PrintStatus();
 
-        // Json Shekhar part. 
+        // Json Shekhar part. Chapter 2.1
         // ------------------==================-------------------------------
         // ------------------==================-------------------------------
-
+        System.Console.WriteLine("====JSON===");
         string JsonString1 = JsonSerializer.Serialize(user1);
         System.Console.WriteLine(JsonString1);
         
@@ -62,5 +63,51 @@ class Program
         {
             Console.WriteLine(message.ToString());
         }
+
+        // Encoding 2.2
+        System.Console.WriteLine("========== ENCODING Chapter 2.2 =========");
+        //Task 41
+        string normalString = "Ekta game banabo!!";
+        byte[] byteString = Encoding.UTF8.GetBytes(normalString);
+        foreach(var item in byteString)
+        {
+            System.Console.Write($"{item} ");
+        }
+        System.Console.WriteLine();
+        string backToNormal = Encoding.UTF8.GetString(byteString);
+        System.Console.WriteLine(backToNormal);
+        // Task 42
+
+        ChatMessage c1 = new ChatMessage("Kader" , "Koitarina mane bolte parina","roomnai");
+        string c1Json = JsonSerializer.Serialize(c1);
+        byte[] c1ToBytes = Encoding.UTF8.GetBytes(c1Json);
+
+        foreach(var item in c1ToBytes)
+        {
+            System.Console.Write($"{item} ");
+        }
+        System.Console.WriteLine($"Total Bytes in C1 is {c1ToBytes.Length}");
+
+        // Task 43,44 is putting the task 41,42 through a Method!!!!! genericccccaaa
+        // voy kortese , kishob shuru korlam egula?
+        // miss you "hellu wold"
+        //TEsting 43
+        ChatMessage testMsg = new ChatMessage("Bostim", "Test 43-44", "Room");
+        byte[] bytes = Serializer.ToBytes(testMsg);
+        ChatMessage recovered = Serializer.FromBytes<ChatMessage>(bytes);
+        Console.WriteLine(recovered.ToString());  
+        //Task 47 and 48 Completed by creating Serializeer.cs
+        // task 49 ! idid man but u cant seeeeeee!
+        // skipping that Task 50! LOL!
+
+
+
+
     }
+
+
+        
+
+    
+    
 }
