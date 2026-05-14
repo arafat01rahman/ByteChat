@@ -1,5 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using ChatApp.Console.Models;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Text.Json;
 
@@ -100,6 +101,68 @@ class Program
         // task 49 ! idid man but u cant seeeeeee!
         // skipping that Task 50! LOL!
 
+         static Packet WrapMessage(ChatMessage msg)
+        {
+            string js = JsonSerializer.Serialize(msg);
+            return new Packet
+            {
+                PacketType = "ChatMessage",
+                JsonPayload = js
+            };
+        }
+
+        ChatMessage packettest = new ChatMessage("Farhan","Kire","581");
+
+        Packet packet = WrapMessage(packettest);
+
+        byte[] packetBytes = Serializer.ToBytes(packet);
+
+        Packet recoveredPacket = Serializer.FromBytes<Packet>(packetBytes);
+
+        Console.WriteLine($"PacketType: {recoveredPacket.PacketType}");
+
+        
+        ChatMessage final = JsonSerializer.Deserialize<ChatMessage>(recoveredPacket.JsonPayload);
+        Console.WriteLine($"{final.SenderName}: {final.Text}");  
+
+        SystemMessage sysMsg = new SystemMessage("Server", "ssd","UserJoined");
+
+        // Wrap 
+        string sysJson = JsonSerializer.Serialize(sysMsg);
+        Packet sysPacket = new Packet 
+        { 
+            PacketType = "SystemMessage", 
+            JsonPayload = sysJson 
+        };
+
+        // Round trip
+        byte[] sysBytes = Serializer.ToBytes(sysPacket);
+        Packet recoveredSys = Serializer.FromBytes<Packet>(sysBytes);
+        SystemMessage finalSys = JsonSerializer.Deserialize<SystemMessage>(recoveredSys.JsonPayload);
+        Console.WriteLine(finalSys.EventType);   
+
+
+
+        // task 63
+        ChatMessage original = new ChatMessage("Alice", "Hello Task 63", "General");
+        byte[] bytess = PacketSerializer.Serialize(original, "ChatMessage");
+        var (type, json) = PacketSerializer.Deserialize(bytess);
+        ChatMessage recovered1 = JsonSerializer.Deserialize<ChatMessage>(json);
+        Console.WriteLine($"Original: {original.SenderName} - {original.Text}");
+        Console.WriteLine($"Recovered: {recovered1.SenderName} - {recovered1.Text}");
+        Console.WriteLine($"PacketType: {type}");
+        Console.WriteLine($"Match: {original.Text == recovered.Text}");
+
+        // task 64
+        SystemMessage sysOriginal = new SystemMessage("Server","kk" ,"UserJoined");
+        byte[] sysBytes1 = PacketSerializer.Serialize(sysOriginal,"SystemMessage");
+        var (sysType, sysJson1) = PacketSerializer.Deserialize(sysBytes);
+        SystemMessage sysRecovered = JsonSerializer.Deserialize<SystemMessage>(sysJson1);
+        Console.WriteLine($"Original EventType: {sysOriginal.EventType}");
+        Console.WriteLine($"Recovered EventType: {sysRecovered.EventType}");
+        Console.WriteLine($"PacketType: {sysType}");
+
+        // Stage 2 is done Now!!
 
 
 
